@@ -1,4 +1,5 @@
 import { useState } from "react";
+import avatar from "./assets/user-icon.png";
 
 import "./App.css";
 
@@ -12,9 +13,12 @@ function App() {
   });
   return (
     <main>
-      <h2>Nigesty Hagos</h2>
-      <p>+44-745-559-7333</p>
-      <p>itsmyrealname@gmail.com</p>
+      <img src={avatar} />
+      <h2>
+        {contact.firstName} {contact.lastName}
+      </h2>
+      <p>{contact.phone}</p>
+      <p>{contact.email}</p>
     </main>
   );
 }
