@@ -4,9 +4,11 @@ import "./App.css";
 
 function App() {
   return (
-    <>
-      <h1>Vite + React</h1>
-    </>
+    <main>
+      <h2>Nigesty Hagos</h2>
+      <p>+44-745-559-7333</p>
+      <p>itsmyrealname@gmail.com</p>
+    </main>
   );
 }
 
