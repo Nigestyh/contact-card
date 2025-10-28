@@ -1,7 +1,7 @@
 import { useState } from "react";
 import avatar from "./assets/user-icon.png";
 import starFilled from "./assets/star-filled.png";
-
+import starEmpty from "./assets/star-empty.png";
 import "./App.css";
 
 function App() {
@@ -12,13 +12,15 @@ function App() {
     email: "tsmyrealname@gmail.com",
     isFavourite: false,
   });
+
+  const starIcon = contact.isFavourite ? starEmpty : starFilled;
   return (
     <main>
       <article className="card">
         <img src={avatar} className="user-icon" />
         <div>
           <button className="favourite-button">
-            <img src={starFilled} className="star" />
+            <img src={starIcon} className="star" />
           </button>
           <h2 className="name">
             {contact.firstName} {contact.lastName}
