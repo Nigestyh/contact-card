@@ -1,8 +1,7 @@
 import { useState } from "react";
 import avatar from "./assets/user-icon.png";
-import starFilled from "./assets/star-filled.png";
-import starEmpty from "./assets/star-empty.png";
 import "./App.css";
+import StarButton from "./StarButton";
 
 function App() {
   const [contact, setContact] = useState({
@@ -12,8 +11,6 @@ function App() {
     email: "tsmyrealname@gmail.com",
     isFavourite: false,
   });
-
-  const starIcon = contact.isFavourite ? starEmpty : starFilled;
 
   function toggleFavourite() {
     setContact((prevContact) => {
@@ -29,22 +26,10 @@ function App() {
       <article className="card">
         <img src={avatar} className="user-icon" />
         <div>
-          <button
-            onClick={toggleFavourite}
-            className="favourite-button"
-            aria-label={
-              contact.isFavourite
-                ? "Add to favourites"
-                : "Remove from favourites"
-            }
-            aria-pressed={contact.isFavourite}
-          >
-            <img
-              src={starIcon}
-              className="star"
-              alt={contact.isFavourite ? "empty star icon" : "filled star icon"}
-            />
-          </button>
+          <StarButton
+            isFavourite={contact.isFavourite}
+            toggle={toggleFavourite}
+          />
           <h2 className="name">
             {contact.firstName} {contact.lastName}
           </h2>
