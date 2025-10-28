@@ -14,16 +14,18 @@ function App() {
   });
   return (
     <main>
-      <article>
-        <img src={avatar} />
-        <button>
-          <img src={starFilled} />
-        </button>
-        <h2>
-          {contact.firstName} {contact.lastName}
-        </h2>
-        <p>{contact.phone}</p>
-        <p>{contact.email}</p>
+      <article className="card">
+        <img src={avatar} className="user-icon" />
+        <div>
+          <button className="favourite-button">
+            <img src={starFilled} className="star" />
+          </button>
+          <h2 className="name">
+            {contact.firstName} {contact.lastName}
+          </h2>
+          <p>{contact.phone}</p>
+          <p>{contact.email}</p>
+        </div>
       </article>
     </main>
   );
