@@ -29,8 +29,21 @@ function App() {
       <article className="card">
         <img src={avatar} className="user-icon" />
         <div>
-          <button onClick={toggleFavourite} className="favourite-button">
-            <img src={starIcon} className="star" />
+          <button
+            onClick={toggleFavourite}
+            className="favourite-button"
+            aria-label={
+              contact.isFavourite
+                ? "Add to favourites"
+                : "Remove from favourites"
+            }
+            aria-pressed={contact.isFavourite}
+          >
+            <img
+              src={starIcon}
+              className="star"
+              alt={contact.isFavourite ? "empty star icon" : "filled star icon"}
+            />
           </button>
           <h2 className="name">
             {contact.firstName} {contact.lastName}
