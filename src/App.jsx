@@ -14,12 +14,22 @@ function App() {
   });
 
   const starIcon = contact.isFavourite ? starEmpty : starFilled;
+
+  function toggleFavourite() {
+    setContact((prevContact) => {
+      return {
+        ...prevContact,
+        isFavourite: !prevContact.isFavourite,
+      };
+    });
+  }
+
   return (
     <main>
       <article className="card">
         <img src={avatar} className="user-icon" />
         <div>
-          <button className="favourite-button">
+          <button onClick={toggleFavourite} className="favourite-button">
             <img src={starIcon} className="star" />
           </button>
           <h2 className="name">

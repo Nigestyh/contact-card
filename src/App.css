@@ -17,6 +17,7 @@ main {
 .card .star {
   width: 40px;
   margin-top: 7px;
+  cursor: pointer;
 }
 .card {
   background: whitesmoke;
