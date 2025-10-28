@@ -1,5 +1,6 @@
 import { useState } from "react";
 import avatar from "./assets/user-icon.png";
+import starFilled from "./assets/star-filled.png";
 
 import "./App.css";
 
@@ -13,12 +14,17 @@ function App() {
   });
   return (
     <main>
-      <img src={avatar} />
-      <h2>
-        {contact.firstName} {contact.lastName}
-      </h2>
-      <p>{contact.phone}</p>
-      <p>{contact.email}</p>
+      <article>
+        <img src={avatar} />
+        <button>
+          <img src={starFilled} />
+        </button>
+        <h2>
+          {contact.firstName} {contact.lastName}
+        </h2>
+        <p>{contact.phone}</p>
+        <p>{contact.email}</p>
+      </article>
     </main>
   );
 }
